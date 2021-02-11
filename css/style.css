@@ -4,6 +4,7 @@
     --primary-dark-grayish: #6a6f81;
 
     --neutral-dark-gray: #969696;
+    font-size: 18px;
     
 }
 *{
@@ -14,49 +15,22 @@
 
 body{
     font-family: "Kumbh Sans", sans-serif;
-    font-size: 18px;
     color: var(--primary-very-dark);
 }
 
 .container{
-    overflow: hidden;
-    background-color: var(--primary-dark-cyan);
-    position: relative;
     width: 100vw;
     height: 100vh;
-}
-
-.container::before{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: url("../images/bg-pattern-top.svg") center/contain no-repeat;
-    position: absolute;
-    bottom: 47%;
-    right: 30%;
-}
-
-.container::after{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: url("../images/bg-pattern-top.svg") center/contain no-repeat;
-    position: absolute;
-    top: 51%;
-    left: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: url("../images/bg-pattern-top.svg") right 50vw bottom 40vh no-repeat, url("../images/bg-pattern-bottom.svg") left 50vw top 50vh no-repeat var(--primary-dark-cyan);
 }
 
 .box{
     background-color: #fff;
     width: 350px;
     border-radius: 0.8rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    transform: translate(-50%, -50%);
     box-shadow: 10px 10px 30px rgba(50, 54, 75, 0.3);
 }
 
@@ -74,28 +48,25 @@ body{
     text-align: center;
     position: relative;
     height: 150px;
+    display: flex;
     border-bottom: 1px solid var(--neutral-dark-gray);
 }
 
-.box-img{
+.box-name img{
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 5px solid #fff;
     position: absolute;
     bottom: 45%;
     left: 50%;
-    transform: translate(-50%, -20%);
-    border-radius: 50%;
-}
-.box-img img{
-    width: 96px;
-    height: 96px;
-    top: 0;
-    border-radius: 50%;
-    border: 5px solid #fff;
+    transform: translate(-50%, -35%);
 }
 
 .box-name-text{
     width: 100%;
     position: relative;
-    top: 55%;
+    top: 50%;
 }
 
 .box-name p.text-bold{
@@ -138,6 +109,9 @@ body{
 }
 
 @media (max-width: 425px){
+    .container{
+        background: url("../images/bg-pattern-top.svg") right 43vw bottom 38vh no-repeat, url("../images/bg-pattern-bottom.svg") left 38vw top 40vh no-repeat var(--primary-dark-cyan);
+    }
     .box{
         width: 80%;
     }
